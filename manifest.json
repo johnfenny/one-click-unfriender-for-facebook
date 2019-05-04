@@ -4,7 +4,7 @@
     "version": "1.0",
     "manifest_version": 2,
     "content_scripts": [{
-        "matches": ["https://www.facebook.com/*/friends?lst=*"],
+        "matches": ["https://www.facebook.com/*&source_ref=pb_friends_tl"],
         "js": ["facebook-unfriender-one-click.js"]
     }]
 }
