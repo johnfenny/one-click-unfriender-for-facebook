@@ -1,5 +1,5 @@
 chrome.extension.onMessage.addListener(function(message) {
-    console.log("data", message);
+    // console.log("dataFromBackgroundScript", message);
 
 	var __a = message.__a;
 	var __dyn = message.__dyn;
@@ -37,5 +37,4 @@ chrome.extension.onMessage.addListener(function(message) {
 	}
 	
 	setInterval(begin, 500);
-
 });
