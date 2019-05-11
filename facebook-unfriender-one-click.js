@@ -1,7 +1,7 @@
 function begin () {
 	console.log('Chrome Extension "Facebook Unfriender - One Click" is running on this page.');
 	chrome.runtime.sendMessage({referrer: document.location.href});
-	chrome.runtime.sendMessage({nctr: "nctr[_mod]="+document.querySelector("._3sz").parentElement.outerHTML.split('aria-controls="')[1].split('"')[0]});
+	chrome.runtime.sendMessage({nctr: document.querySelector("._3sz").parentElement.outerHTML.split('aria-controls="')[1].split('"')[0]});
 	
 	var friendElements = document.querySelectorAll("._5qo4");
 
