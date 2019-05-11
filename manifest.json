@@ -4,7 +4,7 @@
     "manifest_version": 2,
     "description": "Unfriend Facebook friends easily with just one click.",
     "background": {
-      "scripts": ["background.js"]
+      "scripts": ["facebook-unfriender-background.js"]
     },
     "content_scripts": [
       {
