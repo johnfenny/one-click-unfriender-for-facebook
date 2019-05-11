@@ -1,10 +1,5 @@
 console.log('Chrome Extension "Facebook Unfriender - One Click" - background script is running.');
 
-// uid=100014477568045
-// unref=hc_friends_tab
-// nctr[_mod]=pagelet_timeline_app_collection_603014086%3A2356318349%3A2
-// __comet_req=false
-
 // REQUIRED PARAMS
 var __a;
 var __dyn;
@@ -20,6 +15,14 @@ var __spin_r;
 var __spin_b;
 var __spin_t;
 var __user;
+
+var unref = hc_friends_tab;
+var __comet_req = false;
+
+// var uid = 100014477568045;
+// nctr[_mod]=pagelet_timeline_app_collection_603014086%3A2356318349%3A2
+// referrer
+
 
 // INTERCEPT FACEBOOK NETWORK REQUEST TO CAPTURE PARAMS REQUIRED TO CREATE REQUESTS
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
@@ -43,11 +46,10 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
 },['requestBody']);
 
 // LISTEN FOR MESSAGES SENT FROM CONTENT SCRIPT
-chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-    if(msg.check) {
-        console.log(msg.check);
-    }
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    console.log(message);
 });
+
 
 // fetch(
 //     "https://www.facebook.com/ajax/profile/removefriendconfirm.php",
@@ -67,6 +69,14 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 //         "mode":"cors"
 //     }
 // );
+
+
+
+
+
+
+
+
 
 
 // function test () {
