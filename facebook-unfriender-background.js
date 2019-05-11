@@ -21,9 +21,32 @@ console.log('Chrome Extension "Facebook Unfriender - One Click" - background scr
 // __spin_b=trunk
 // __spin_t=1557426537
 
+var uid;
+var unref;
+var nctr;
+var __user;
+var __a;
+var __dyn;
+var __req;
+var __be;
+var __pc;
+var dpr;
+var __rev;
+var __comet_req;
+var __s;
+var fb_dtsg;
+var jazoest;
+var __spin_r;
+var __spin_b;
+var __spin_t;
+
 // INTERCEPT FACEBOOK NETWORK REQUEST TO CAPTURE PARAMS REQUIRED TO CREATE REQUESTS
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
-    console.log(details.requestBody);
+    if(details.requestBody.formData) {
+        var body = details.requestBody.formData;
+        console.log(body);
+
+    }
 },{urls: ["<all_urls>"]},['requestBody']);
 
 // LISTEN FOR MESSAGES SENT FROM CONTENT SCRIPT
