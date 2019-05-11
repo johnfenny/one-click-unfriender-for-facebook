@@ -3,6 +3,7 @@ function begin () {
     
     function itsalive () {
         console.log("test1");
+        chrome.runtime.sendMessage({check: "test2"});
     }
     
     document.addEventListener("click", function() {
@@ -28,4 +29,3 @@ begin();
 
 // var elements = document.querySelectorAll("._5qo4");
 
-chrome.runtime.sendMessage({check: "testing123"});

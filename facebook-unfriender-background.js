@@ -1,4 +1,4 @@
-console.log("Hello, world!");
+console.log('"Facebook Unfriender - One Click" - background script is running.');
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if(msg.check) {
