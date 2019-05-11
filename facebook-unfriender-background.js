@@ -56,21 +56,19 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 });
 
 
-// fetch(
-//     "https://www.facebook.com/ajax/profile/removefriendconfirm.php",
-//     {
-//         "credentials":"include",
-//         "headers":{
-//             "accept":"*/*",
-//             "accept-language":"en-US,en;q=0.9",
-//             "cache-control":"no-cache",
-//             "content-type":"application/x-www-form-urlencoded",
-//             "pragma":"no-cache"
-//         },
-//         "referrer":"https://www.facebook.com/joeyfenny/friends?lst=603014086%3A603014086%3A1557573594&source_ref=pb_friends_tl",
-//         "referrerPolicy":"origin-when-cross-origin",
-//         "body":"uid=100012745057376&unref=hc_friends_tab&nctr[_mod]=pagelet_timeline_app_collection_603014086%3A2356318349%3A2&__user=603014086&__a=1&__dyn=7AgNe-4amaAxd2u6aJGeFxqeCwDKEKAdy8Z9LFwxx-6ES2N6wAxu13y888eo9qUC3eF89XyEjKewXwgUOdwJKdwVxCu58O5U7S4E9ohwoU8-1rG0HFU2BDx6q7ooxu6U6O5oaUvwHwrEsxeEgy9E6aEymu4EhwIUa9m4-2y48OEO2e2bwloy2q48692EgVFXAy85iawiEKucxy6o98dU-rz8mgK7o88vwEy82lxG3u362q&__req=1f&__be=1&__pc=PHASED%3Aufi_home_page_pkg&dpr=3&__rev=1000701161&__s=%3Aj44c5d%3Amzg1qv&fb_dtsg=AQGTBQ222trG%3AAQGJTAqXVtoW&jazoest=21998&__spin_r=1000701161&__spin_b=trunk&__spin_t=1557561201",
-//         "method":"POST",
-//         "mode":"cors"
-//     }
-// );
+var sendDeleteRequest = fetch("https://www.facebook.com/ajax/profile/removefriendconfirm.php", {
+        "credentials":"include",
+        "headers":{
+            "accept":"*/*",
+            "accept-language":"en-US,en;q=0.9",
+            "cache-control":"no-cache",
+            "content-type":"application/x-www-form-urlencoded",
+            "pragma":"no-cache"
+        },
+        "referrer":referrer,
+        "referrerPolicy":"origin-when-cross-origin",
+        "body":"uid="+uid+"&unref="+unref+"&nctr[_mod]="+nctr+"&__user="+__user+"&__a="+__a+"&__dyn="+__dyn+"&__req="+__req+"&__be="+__be+"&__pc="+__pc+"&dpr="+dpr+"&__rev="+__rev+"&__s="+__s+"&fb_dtsg="+fb_dtsg+"&jazoest="+jazoest+"&__spin_r="+__spin_r+"&__spin_b="+__spin_b+"&__spin_t="+__spin_t+"",
+        "method":"POST",
+        "mode":"cors"
+    }
+);
