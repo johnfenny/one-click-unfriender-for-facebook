@@ -40,71 +40,71 @@ chrome.extension.onMessage.addListener(function(message) {
 });
 
 
-fetch("
-https://www.facebook.com/ajax/profile/removefriendconfirm.php",
-{
-	"credentials":"include",
-	"headers":{
-		"accept":"*/*",
-		"accept-language":"en-US,en;q=0.9",
-		"cache-control":"no-cache",
-		"content-type":"application/x-www-form-urlencoded",
-		"pragma":"no-cache"
-	},
-	"referrer":"'+referrer+'",
-	"referrerPolicy":"origin-when-cross-origin",
-	"body":"uid='+userId+'
-	&unref='+unref+'
-	&nctr[_mod]='+nctr+'
-	&__user='+__user+'
-	&__a='+__a+'
-	&__dyn='+__dyn+'
-	&__req='+__req+'
-	&__be='+__be+'
-	&__pc='+__pc+'
-	&dpr='+dpr+'
-	&__rev='+__rev+'
-	&__s='+__s+'
-	&fb_dtsg='+fb_dtsg+'
-	&jazoest='+jazoest+'
-	&__spin_r='+__spin_r+'
-	&__spin_b='+__spin_b+'
-	&__spin_t='+__spin_t+'",
-	"method":"POST",
-	"mode":"cors"
-});
+// fetch("
+// https://www.facebook.com/ajax/profile/removefriendconfirm.php",
+// {
+// 	"credentials":"include",
+// 	"headers":{
+// 		"accept":"*/*",
+// 		"accept-language":"en-US,en;q=0.9",
+// 		"cache-control":"no-cache",
+// 		"content-type":"application/x-www-form-urlencoded",
+// 		"pragma":"no-cache"
+// 	},
+// 	"referrer":"'+referrer+'",
+// 	"referrerPolicy":"origin-when-cross-origin",
+// 	"body":"uid='+userId+'
+// 	&unref='+unref+'
+// 	&nctr[_mod]='+nctr+'
+// 	&__user='+__user+'
+// 	&__a='+__a+'
+// 	&__dyn='+__dyn+'
+// 	&__req='+__req+'
+// 	&__be='+__be+'
+// 	&__pc='+__pc+'
+// 	&dpr='+dpr+'
+// 	&__rev='+__rev+'
+// 	&__s='+__s+'
+// 	&fb_dtsg='+fb_dtsg+'
+// 	&jazoest='+jazoest+'
+// 	&__spin_r='+__spin_r+'
+// 	&__spin_b='+__spin_b+'
+// 	&__spin_t='+__spin_t+'",
+// 	"method":"POST",
+// 	"mode":"cors"
+// });
 
-fetch("
-https://www.facebook.com/ajax/profile/removefriendconfirm.php",
-{
-	"credentials":"include",
-	"headers":{
-		"accept":"*/*",
-		"accept-language":"en-US,en;q=0.9",
-		"cache-control":"no-cache",
-		"content-type":"application/x-www-form-urlencoded",
-		"pragma":"no-cache"
-	},
-	"referrer":"https://www.facebook.com/joeyfenny/friends?lst=603014086%3A603014086%3A1557598486&source_ref=pb_friends_tl",
-	"referrerPolicy":"origin-when-cross-origin",
-	"body":"uid=100006712306449
---	&unref=bd_friends_tab
-	&floc=friends_tab
-	&nctr[_mod]=pagelet_timeline_app_collection_603014086%3A2356318349%3A2
-	&__user=603014086
-	&__a=1
-	&__dyn=7AgNe-4amaxx2u6aJGeFxqewKKEKAdy8Z9LFwxx-6ES2N6wAxu13y888eo9qyUcWAwDKaxeUW3K13z8S2S4o5eu58O5U7S4E9ohwoU8-1rG0HFU2BxCq7ooxu6U6O5oaUvwHwrEsxeEgy86CEymu4EhwIUa9u4-3CcGcwzwyU5W3u1yyUizHAy85iawiEKucxy6o98dU-rz8mgK7o884y8w9m6EdUco9E
-	&__req=1c
-	&__be=1
-	&__pc=PHASED%3Aufi_home_page_pkg
-	&dpr=3
-	&__rev=1000701539
-	&__s=%3Aotpcqf%3A19f29j
-	&fb_dtsg=AQHC_L9IAkzA%3AAQFNZeXv4Wzf
-	&jazoest=22057
-	&__spin_r=1000701539
-	&__spin_b=trunk
-	&__spin_t=1557598390",
-	"method":"POST",
-	"mode":"cors"
-});
+// fetch("
+// https://www.facebook.com/ajax/profile/removefriendconfirm.php",
+// {
+// 	"credentials":"include",
+// 	"headers":{
+// 		"accept":"*/*",
+// 		"accept-language":"en-US,en;q=0.9",
+// 		"cache-control":"no-cache",
+// 		"content-type":"application/x-www-form-urlencoded",
+// 		"pragma":"no-cache"
+// 	},
+// 	"referrer":"https://www.facebook.com/joeyfenny/friends?lst=603014086%3A603014086%3A1557598486&source_ref=pb_friends_tl",
+// 	"referrerPolicy":"origin-when-cross-origin",
+// 	"body":"uid=100006712306449
+// --	&unref=bd_friends_tab
+// 	&floc=friends_tab
+// 	&nctr[_mod]=pagelet_timeline_app_collection_603014086%3A2356318349%3A2
+// 	&__user=603014086
+// 	&__a=1
+// 	&__dyn=7AgNe-4amaxx2u6aJGeFxqewKKEKAdy8Z9LFwxx-6ES2N6wAxu13y888eo9qyUcWAwDKaxeUW3K13z8S2S4o5eu58O5U7S4E9ohwoU8-1rG0HFU2BxCq7ooxu6U6O5oaUvwHwrEsxeEgy86CEymu4EhwIUa9u4-3CcGcwzwyU5W3u1yyUizHAy85iawiEKucxy6o98dU-rz8mgK7o884y8w9m6EdUco9E
+// 	&__req=1c
+// 	&__be=1
+// 	&__pc=PHASED%3Aufi_home_page_pkg
+// 	&dpr=3
+// 	&__rev=1000701539
+// 	&__s=%3Aotpcqf%3A19f29j
+// 	&fb_dtsg=AQHC_L9IAkzA%3AAQFNZeXv4Wzf
+// 	&jazoest=22057
+// 	&__spin_r=1000701539
+// 	&__spin_b=trunk
+// 	&__spin_t=1557598390",
+// 	"method":"POST",
+// 	"mode":"cors"
+// });
