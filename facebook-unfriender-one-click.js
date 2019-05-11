@@ -41,9 +41,9 @@ chrome.extension.onMessage.addListener(function(message) {
 			if (friendElements[i].innerHTML.indexOf("facebook-unfriender-one-click") == -1) { // if delete button doesn't already exist, add one
 				var deleteButtonLocation = friendElements[i].childNodes[1].childNodes[0].childNodes[1].childNodes[0];
 				if(accountActive == true) {
-					deleteButtonLocation.innerHTML = element.innerHTML + "<div class='facebook-unfriender-one-click' onclick='" + unfriendActiveAccount + "' style='color: red !important; float: right; margin-top: 1.5px; font-size: 17px; cursor: pointer;'><b>X</b></div>";
+					deleteButtonLocation.innerHTML = deleteButtonLocation.innerHTML + "<div class='facebook-unfriender-one-click' onclick='" + unfriendActiveAccount + "' style='color: red !important; float: right; margin-top: 1.5px; font-size: 17px; cursor: pointer;'><b>X</b></div>";
 				} else {
-					deleteButtonLocation.innerHTML = element.innerHTML + "<div class='facebook-unfriender-one-click' onclick='" + unfriendInactiveAccount + "' style='color: red !important; float: right; margin-top: 1.5px; margin-left: 4px; font-size: 17px; cursor: pointer;'><b>X</b></div>";
+					deleteButtonLocation.innerHTML = deleteButtonLocation.innerHTML + "<div class='facebook-unfriender-one-click' onclick='" + unfriendInactiveAccount + "' style='color: red !important; float: right; margin-top: 1.5px; margin-left: 4px; font-size: 17px; cursor: pointer;'><b>X</b></div>";
 				}
 			}
 		}
