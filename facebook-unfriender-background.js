@@ -1,26 +1,5 @@
 console.log('Chrome Extension "Facebook Unfriender - One Click" - background script is running.');
 
-// REQUIRED PARAMS
-// var __a;
-// var __dyn = "7AgNe-4amaxx2u6aJGeFxqewKKEKAdy8Z9LFwxx-6ES2N6wAxu13y888eo9qyUcWAwDKaxeUW3K13z8S2S4o5eu58O5U7S4E9ohwoU8-1rG0HFU2BxCq7ooxu6U6O5oaUvwHwrEsxeEgy86CEymu4EhwIUa9u4-3CcGcwzwyU5W3u1yyUizHAy85iawiEKucxy6o98dU-rz8mgK7o884y8w9m6EdUco9E"; // dif
-// var __req = "15"; // dif
-// var __be;
-// var __pc;
-// var dpr;
-// var __rev;
-// var __s = ":j44c5d:clbq4u"; // dif
-// var fb_dtsg = "AQFs51avF8NV:AQG6E6glh6dQ"; // dif
-// var jazoest = "21940"; // dif
-// var __spin_r;
-// var __spin_b;
-// var __spin_t;
-// var __user;
-// var unref = "hc_friends_tab";
-// var __comet_req = "false";
-// var uid;
-// var referrer;
-// var nctr;
-
 // INTERCEPT FACEBOOK NETWORK REQUEST TO CAPTURE PARAMS REQUIRED TO CREATE REQUESTS
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
 
@@ -32,7 +11,7 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
             active: true,
             currentWindow: true
         }, function (tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, {
+            chrome.tabs.sendMessage(tabs[0].id, { // send data to content script
                 dpr: details.requestBody.formData.dpr[0],
                 fb_dtsg: details.requestBody.formData.fb_dtsg[0],
                 jazoest: details.requestBody.formData.jazoest[0],
