@@ -19,7 +19,7 @@ chrome.extension.onMessage.addListener(function(message) {
 	var unref = "hc_friends_tab";
 	var __comet_req = "false";
 	var referrer = document.location.href;
-	var nctr = document.querySelector("._3sz").parentElement.outerHTML.split('aria-controls="')[1].split('"')[0]});
+	var nctr = document.querySelector("._3sz").parentElement.outerHTML.split('aria-controls="')[1].split('"')[0];
 
 	function begin() {
 		var elements = document.querySelectorAll("._5qo4");
@@ -37,4 +37,5 @@ chrome.extension.onMessage.addListener(function(message) {
 	}
 	
 	setInterval(begin, 500);
+
 });
