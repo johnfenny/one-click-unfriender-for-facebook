@@ -1,4 +1,5 @@
 console.log('Chrome extension "Facebook Unfriender - One Click" is running on this page.');
+alert("Facebook Unfriender does not currently work on inactive accounts. Hope to add this in next update.")
 
 chrome.extension.onMessage.addListener(function(message) {
     // console.log("dataFromBackgroundScript", message);

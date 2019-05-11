@@ -1,0 +1,1 @@
+To use this extension, install in chrome, then go to your facebook profile, and click on "Friends"
