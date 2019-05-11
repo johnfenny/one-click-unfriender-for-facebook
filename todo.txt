@@ -1,1 +1,0 @@
-substitute hard coded url ajax params with dynamic values pulled from user profile
