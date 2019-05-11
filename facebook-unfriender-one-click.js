@@ -1,5 +1,5 @@
 function begin () {
-		console.log('"Facebook Unfriender - One Click" is running');
+		console.log('Chrome Extension "Facebook Unfriender - One Click" is running on this page.');
 
 		var friendElements = document.querySelectorAll("._5qo4");
 

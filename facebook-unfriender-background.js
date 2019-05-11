@@ -1,4 +1,4 @@
-console.log('"Facebook Unfriender - One Click" - background script is running.');
+console.log('Chrome Extension "Facebook Unfriender - One Click" - background script is running.');
 
 // REQUIRED PARAMS
 
@@ -21,11 +21,12 @@ console.log('"Facebook Unfriender - One Click" - background script is running.')
 // __spin_b=trunk
 // __spin_t=1557426537
 
+// INTERCEPT FACEBOOK NETWORK REQUEST TO CAPTURE PARAMS REQUIRED TO CREATE REQUESTS
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
     console.log(details.requestBody);
 },{urls: ["<all_urls>"]},['requestBody']);
 
-// CHECK FOR MESSAGE SENT FROM FOREGROUND TAB
+// LISTEN FOR MESSAGES SENT FROM CONTENT SCRIPT
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if(msg.check) {
         console.log(msg.check);
