@@ -33,7 +33,6 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
             currentWindow: true
         }, function (tabs) {
             chrome.tabs.sendMessage(tabs[0].id, {
-                param1: "This is a test",
                 dpr: details.requestBody.formData.dpr[0],
                 fb_dtsg: details.requestBody.formData.fb_dtsg[0],
                 jazoest: details.requestBody.formData.jazoest[0],
