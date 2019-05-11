@@ -1,7 +1,7 @@
 {
     "name": "Facebook Unfriender - One Click",
-    "version": "1.0",
     "manifest_version": 2,
+    "version": "1.0",
     "description": "Unfriend Facebook friends easily with just one click.",
     "background": {
       "scripts": ["facebook-unfriender-background.js"]
@@ -13,10 +13,9 @@
       }
     ],
     "permissions": [
-        "webRequest",
-        "webRequestBlocking",
-        "<all_urls>",
-        "tabs",
-        "*://*.google.com/"
+      "<all_urls>",
+      "tabs",
+      "webRequest",
+      "webRequestBlocking"
     ]
   }
