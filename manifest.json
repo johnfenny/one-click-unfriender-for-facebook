@@ -8,14 +8,19 @@
     },
     "content_scripts": [
       {
-        "matches": ["<all_urls>"],
+        "matches": ["*://*.facebook.com/*&source_ref=pb_friends_tl"],
         "js": ["facebook-unfriender-one-click.js"]
       }
     ],
     "permissions": [
-      "<all_urls>",
+      "*://*.facebook.com/*&source_ref=pb_friends_tl",
       "tabs",
       "webRequest",
       "webRequestBlocking"
-    ]
+    ],
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
   }
