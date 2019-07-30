@@ -1,12 +1,6 @@
-console.log('Chrome Extension "Facebook Unfriender - One Click" - background script is running.');
-
 // INTERCEPT FACEBOOK NETWORK REQUEST TO CAPTURE PARAMS REQUIRED TO CREATE REQUESTS
-chrome.webRequest.onBeforeRequest.addListener(function(details) {
-
-    console.log("body", details);
-    
+chrome.webRequest.onBeforeRequest.addListener(function(details) {    
     if(details && details.requestBody && details.requestBody.formData) {
-
         chrome.tabs.query({
             active: true,
             currentWindow: true
