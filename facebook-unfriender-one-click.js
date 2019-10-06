@@ -1,10 +1,6 @@
-alert("Facebook Unfriender does not currently work on inactive accounts. Hope to add this in next update.");
-
-var exists = false;
+// alert("Facebook Unfriender does not currently work on inactive accounts. Hope to add this in next update.");
 
 chrome.extension.onMessage.addListener(function(message) {
-	exists = true;
-
 	var __a         = message.__a;
 	var __dyn       = message.__dyn;
 	var __req       = message.__req;
@@ -20,7 +16,7 @@ chrome.extension.onMessage.addListener(function(message) {
 	var __spin_t    = message.__spin_t;
 	var __user      = message.__user;
 	var unref       = "hc_friends_tab";
-	var __comet_req = "false";
+	// var __comet_req = "false";
 	var referrer    = document.location.href;
 	var nctr        = document.querySelector("._3sz").parentElement.outerHTML.split('aria-controls="')[1].split('"')[0];
 
@@ -32,8 +28,8 @@ chrome.extension.onMessage.addListener(function(message) {
 	
 		for (var i = 0; i < friendElements.length; i++) {
 			var userId                  = friendElements[i].innerHTML.split("id=")[1].split("&")[0];
-			var unfriendActiveAccount   = 'this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove(); fetch("https://www.facebook.com/ajax/profile/removefriendconfirm.php", {"credentials":"include","headers":{"accept":"*/*","accept-language":"en-US,en;q=0.9","cache-control":"no-cache","content-type":"application/x-www-form-urlencoded","pragma":"no-cache"},"referrer":"'+referrer+'","referrerPolicy":"origin-when-cross-origin","body":"uid='+userId+'&unref='+unref+'&nctr[_mod]='+nctr+'&__user='+__user+'&__a='+__a+'&__dyn='+__dyn+'&__req='+__req+'&__be='+__be+'&__pc='+__pc+'&dpr='+dpr+'&__rev='+__rev+'&__s='+__s+'&fb_dtsg='+fb_dtsg+'&jazoest='+jazoest+'&__spin_r='+__spin_r+'&__spin_b='+__spin_b+'&__spin_t='+__spin_t+'","method":"POST","mode":"cors"});';
-			var unfriendInactiveAccount = 'this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove(); fetch("https://www.facebook.com/ajax/profile/removefriendconfirm.php", {"credentials":"include","headers":{"accept":"*/*","accept-language":"en-US,en;q=0.9","cache-control":"no-cache","content-type":"application/x-www-form-urlencoded","pragma":"no-cache"},"referrer":"'+referrer+'","referrerPolicy":"origin-when-cross-origin","body":"uid='+userId+'&unref='+unref+'&floc=friends_tab&nctr[_mod]='+nctr+'&__user='+__user+'&__a='+__a+'&__dyn='+__dyn+'&__req='+__req+'&__be='+__be+'&__pc='+__pc+'&dpr='+dpr+'&__rev='+__rev+'&__s='+__s+'&fb_dtsg='+fb_dtsg+'&jazoest='+jazoest+'&__spin_r='+__spin_r+'&__spin_b='+__spin_b+'&__spin_t='+__spin_t+'","method":"POST","mode":"cors"});';
+			var unfriendActiveAccount   = 'this.closest("._5qo4").parentElement.remove(); fetch("https://www.facebook.com/ajax/profile/removefriendconfirm.php", {"credentials":"include","headers":{"accept":"*/*","accept-language":"en-US,en;q=0.9","cache-control":"no-cache","content-type":"application/x-www-form-urlencoded","pragma":"no-cache"},"referrer":"'+referrer+'","referrerPolicy":"origin-when-cross-origin","body":"uid='+userId+'&unref='+unref+'&nctr[_mod]='+nctr+'&__user='+__user+'&__a='+__a+'&__dyn='+__dyn+'&__req='+__req+'&__be='+__be+'&__pc='+__pc+'&dpr='+dpr+'&__rev='+__rev+'&__s='+__s+'&fb_dtsg='+fb_dtsg+'&jazoest='+jazoest+'&__spin_r='+__spin_r+'&__spin_b='+__spin_b+'&__spin_t='+__spin_t+'","method":"POST","mode":"cors"});';
+			var unfriendInactiveAccount = 'this.closest("._5qo4").parentElement.remove(); fetch("https://www.facebook.com/ajax/profile/removefriendconfirm.php", {"credentials":"include","headers":{"accept":"*/*","accept-language":"en-US,en;q=0.9","cache-control":"no-cache","content-type":"application/x-www-form-urlencoded","pragma":"no-cache"},"referrer":"'+referrer+'","referrerPolicy":"origin-when-cross-origin","body":"uid='+userId+'&unref='+unref+'&floc=friends_tab&nctr[_mod]='+nctr+'&__user='+__user+'&__a='+__a+'&__dyn='+__dyn+'&__req='+__req+'&__be='+__be+'&__pc='+__pc+'&dpr='+dpr+'&__rev='+__rev+'&__s='+__s+'&fb_dtsg='+fb_dtsg+'&jazoest='+jazoest+'&__spin_r='+__spin_r+'&__spin_b='+__spin_b+'&__spin_t='+__spin_t+'","method":"POST","mode":"cors"});';
 
 			var accountActive;
 			if(friendElements[i].innerHTML.indexOf("Message") > -1) {
@@ -43,7 +39,7 @@ chrome.extension.onMessage.addListener(function(message) {
 			}
 
 			if (friendElements[i].innerHTML.indexOf("facebook-unfriender-one-click") == -1) { // if delete button doesn't already exist, add one
-				var deleteButtonLocation = friendElements[i].childNodes[1].childNodes[0].childNodes[1].childNodes[0];
+				var deleteButtonLocation = friendElements[i].querySelector("._5t4x");
 				if(accountActive == true) {
 					deleteButtonLocation.innerHTML = deleteButtonLocation.innerHTML + "<div class='facebook-unfriender-one-click' onclick='" + unfriendActiveAccount + "' style='color: red !important; float: right; margin-top: 1.5px; font-size: 17px; cursor: pointer;'><b>X</b></div>";
 				} else {
@@ -55,15 +51,3 @@ chrome.extension.onMessage.addListener(function(message) {
 
 	setInterval(begin, 500);
 });
-
-
-
-
-
-function checkIfPageLoaded () {
-	if(exists == false) {
-		alert("Please reload the page to get One Click Facebook Unfriender Working");
-	}
-};
-
-setTimeout(checkIfPageLoaded(), 4000);
