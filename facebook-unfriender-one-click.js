@@ -3,7 +3,8 @@ alert("Facebook Unfriender does not currently work on inactive accounts. Hope to
 var exists = false;
 
 chrome.extension.onMessage.addListener(function(message) {
-	var exists      = true;
+	exists = true;
+
 	var __a         = message.__a;
 	var __dyn       = message.__dyn;
 	var __req       = message.__req;
@@ -22,6 +23,9 @@ chrome.extension.onMessage.addListener(function(message) {
 	var __comet_req = "false";
 	var referrer    = document.location.href;
 	var nctr        = document.querySelector("._3sz").parentElement.outerHTML.split('aria-controls="')[1].split('"')[0];
+
+
+
 
 	function begin() {
 		var friendElements = document.querySelectorAll("._5qo4");
@@ -51,6 +55,10 @@ chrome.extension.onMessage.addListener(function(message) {
 
 	setInterval(begin, 500);
 });
+
+
+
+
 
 function checkIfPageLoaded () {
 	if(exists == false) {
