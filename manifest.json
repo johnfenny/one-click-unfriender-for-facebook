@@ -8,12 +8,12 @@
     },
     "content_scripts": [
       {
-        "matches": ["*://*.facebook.com/*&source_ref=pb_friends_tl"],
+        "matches": ["<all_urls>"],
         "js": ["facebook-unfriender-one-click.js"]
       }
     ],
     "permissions": [
-      "*://*.facebook.com/*&source_ref=pb_friends_tl",
+      "<all_urls>",
       "tabs",
       "webRequest",
       "webRequestBlocking"
