@@ -28,3 +28,5 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
     urls: ["https://www.facebook.com/ajax/bz"],
     types: ["xmlhttprequest"]
 },['requestBody']);
+
+// when an xmlhttprequest gets sent to https://www.facebook.com/ajax/bz, capture the params and send to our script
