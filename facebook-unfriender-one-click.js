@@ -17,6 +17,8 @@ chrome.extension.onMessage.addListener(function(message) {
 	var referrer = document.location.href;
 	var nctr     = document.querySelector("._3sz").parentElement.outerHTML.split('aria-controls="')[1].split('"')[0];
 
+	console.log('one-click unfriender for facebook is running on this page');
+
 	function begin() {
 		var friendElements = document.querySelectorAll("._5qo4");
 		for (var i = 0; i < friendElements.length; i++) {
