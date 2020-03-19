@@ -28,5 +28,5 @@ chrome.extension.onMessage.addListener(function(message) {
 		}
 	}
 
-	setInterval(begin, 500);
+	setInterval(begin, 250);
 });
